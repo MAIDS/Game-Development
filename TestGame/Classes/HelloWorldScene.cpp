@@ -1,4 +1,8 @@
 #include "HelloWorldScene.h"
+#include "GUtils.h"
+#include "HexaGridMap.h"
+#include "MapActionListener.h"
+#include <math.h>
 
 USING_NS_CC;
 
@@ -48,29 +52,12 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    /////////////////////////////
-    // 3. add your codes below...
-
-    // add a label shows "Hello World"
-    // create and initialize a label
+    auto map = new HexaGridMap(8, this->getContentSize());
+    map->setRotate(M_PI/180*30);
+    this->addChild(map, 0);
     
-    auto label = Label::createWithTTF("Hello World", "fonts/Marker Felt.ttf", 24);
-    
-    // position the label on the center of the screen
-    label->setPosition(Vec2(origin.x + visibleSize.width/2,
-                            origin.y + visibleSize.height - label->getContentSize().height));
-
-    // add the label as a child to this layer
-    this->addChild(label, 1);
-
-    // add "HelloWorld" splash screen"
-    auto sprite = Sprite::create("HelloWorld.png");
-
-    // position the sprite on the center of the screen
-    sprite->setPosition(Vec2(visibleSize.width/2 + origin.x, visibleSize.height/2 + origin.y));
-
-    // add the sprite as a child to this layer
-    this->addChild(sprite, 0);
+//    auto map2 = new HexaGridMap(6, this->getContentSize());
+//    this->addChild(map2, 0);
     
     return true;
 }
@@ -88,4 +75,12 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
     exit(0);
 #endif
+}
+
+void HelloWorld::onActionStart() {
+    
+}
+
+void HelloWorld::onActionEnd(int action_code, Point *pts) {
+    
 }

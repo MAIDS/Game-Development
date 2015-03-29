@@ -2,8 +2,9 @@
 #define __HELLOWORLD_SCENE_H__
 
 #include "cocos2d.h"
+#include "MapActionListener.h"
 
-class HelloWorld : public cocos2d::Layer
+class HelloWorld : public cocos2d::Layer, public MapActionListener
 {
 public:
     // there's no 'id' in cpp, so we recommend returning the class instance pointer
@@ -17,6 +18,11 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(HelloWorld);
+    
+    virtual void onActionStart();
+    virtual void onActionEnd(int action_code, Point* pts);
+    
+private:
 };
 
 #endif // __HELLOWORLD_SCENE_H__

@@ -59,6 +59,12 @@
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
+		AB6B53191AC512CC002156E6 /* GUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B53171AC512CC002156E6 /* GUtils.cpp */; };
+		AB6B531C1AC520A4002156E6 /* DUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B531A1AC520A4002156E6 /* DUtils.cpp */; };
+		AB6B53201AC523E8002156E6 /* HexaGridMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B531E1AC523E8002156E6 /* HexaGridMap.cpp */; };
+		AB6B53261AC52F03002156E6 /* MapActionListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B53241AC52F03002156E6 /* MapActionListener.cpp */; };
+		AB6B53291AC52F1E002156E6 /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B53271AC52F1E002156E6 /* Constants.cpp */; };
+		ABA47A2F1AC67ECA00EAD117 /* HexaGridUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABA47A2D1AC67ECA00EAD117 /* HexaGridUnit.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -150,6 +156,18 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		AB6B53171AC512CC002156E6 /* GUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUtils.cpp; path = Utils/GUtils.cpp; sourceTree = "<group>"; };
+		AB6B53181AC512CC002156E6 /* GUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUtils.h; path = Utils/GUtils.h; sourceTree = "<group>"; };
+		AB6B531A1AC520A4002156E6 /* DUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DUtils.cpp; path = Utils/DUtils.cpp; sourceTree = "<group>"; };
+		AB6B531B1AC520A4002156E6 /* DUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUtils.h; path = Utils/DUtils.h; sourceTree = "<group>"; };
+		AB6B531E1AC523E8002156E6 /* HexaGridMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HexaGridMap.cpp; path = GameObjects/HexaGridMap.cpp; sourceTree = "<group>"; };
+		AB6B531F1AC523E8002156E6 /* HexaGridMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HexaGridMap.h; path = GameObjects/HexaGridMap.h; sourceTree = "<group>"; };
+		AB6B53241AC52F03002156E6 /* MapActionListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapActionListener.cpp; path = GameObjects/MapActionListener.cpp; sourceTree = "<group>"; };
+		AB6B53251AC52F03002156E6 /* MapActionListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapActionListener.h; path = GameObjects/MapActionListener.h; sourceTree = "<group>"; };
+		AB6B53271AC52F1E002156E6 /* Constants.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Constants.cpp; path = GameObjects/Constants.cpp; sourceTree = "<group>"; };
+		AB6B53281AC52F1E002156E6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = GameObjects/Constants.h; sourceTree = "<group>"; };
+		ABA47A2D1AC67ECA00EAD117 /* HexaGridUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HexaGridUnit.cpp; path = GameObjects/HexaGridUnit.cpp; sourceTree = "<group>"; };
+		ABA47A2E1AC67ECA00EAD117 /* HexaGridUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HexaGridUnit.h; path = GameObjects/HexaGridUnit.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -285,6 +303,8 @@
 		46880B8319C43A87006E1F66 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				AB6B531D1AC523A6002156E6 /* GameObjects */,
+				AB6B53161AC5129D002156E6 /* Utils */,
 				46880B8419C43A87006E1F66 /* AppDelegate.cpp */,
 				46880B8519C43A87006E1F66 /* AppDelegate.h */,
 				46880B8619C43A87006E1F66 /* HelloWorldScene.cpp */,
@@ -340,6 +360,32 @@
 			name = Icons;
 			path = ios;
 			sourceTree = SOURCE_ROOT;
+		};
+		AB6B53161AC5129D002156E6 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				AB6B53171AC512CC002156E6 /* GUtils.cpp */,
+				AB6B53181AC512CC002156E6 /* GUtils.h */,
+				AB6B531A1AC520A4002156E6 /* DUtils.cpp */,
+				AB6B531B1AC520A4002156E6 /* DUtils.h */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		AB6B531D1AC523A6002156E6 /* GameObjects */ = {
+			isa = PBXGroup;
+			children = (
+				AB6B531E1AC523E8002156E6 /* HexaGridMap.cpp */,
+				AB6B531F1AC523E8002156E6 /* HexaGridMap.h */,
+				AB6B53241AC52F03002156E6 /* MapActionListener.cpp */,
+				AB6B53251AC52F03002156E6 /* MapActionListener.h */,
+				AB6B53271AC52F1E002156E6 /* Constants.cpp */,
+				AB6B53281AC52F1E002156E6 /* Constants.h */,
+				ABA47A2D1AC67ECA00EAD117 /* HexaGridUnit.cpp */,
+				ABA47A2E1AC67ECA00EAD117 /* HexaGridUnit.h */,
+			);
+			name = GameObjects;
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -489,9 +535,15 @@
 			files = (
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
+				AB6B53201AC523E8002156E6 /* HexaGridMap.cpp in Sources */,
+				ABA47A2F1AC67ECA00EAD117 /* HexaGridUnit.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
+				AB6B53261AC52F03002156E6 /* MapActionListener.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				AB6B53291AC52F1E002156E6 /* Constants.cpp in Sources */,
+				AB6B53191AC512CC002156E6 /* GUtils.cpp in Sources */,
+				AB6B531C1AC520A4002156E6 /* DUtils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
