@@ -12,7 +12,12 @@ LOCAL_MODULE_FILENAME := libcocos2dcpp
 
 LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../Classes/AppDelegate.cpp \
-                   ../../Classes/HelloWorldScene.cpp
+                   ../../Classes/HelloWorldScene.cpp \
+                   ../../Classes/Utils/DUtils.cpp \
+                   ../../Classes/Utils/GUtils.cpp \
+                   ../../Classes/GameObjects/HexaGridMap.cpp \
+                   ../../Classes/GameObjects/HexaGridUnit.cpp \
+                   ../../Classes/GameObjects/MapActionListener.cpp
 
 LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../Classes
 
