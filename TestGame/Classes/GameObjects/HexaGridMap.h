@@ -48,6 +48,7 @@ private:
     void onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event);
     void onTouch(cocos2d::Touch *touch, cocos2d::Event *event, int DownOrMove);
     void onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event);
+    bool isOnEdges(cocos2d::Touch* touch);
 };
 
 #endif /* defined(__TestGame__HexaGridMap__) */

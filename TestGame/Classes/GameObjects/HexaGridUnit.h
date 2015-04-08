@@ -15,6 +15,7 @@
 class HexaGridUnit : public cocos2d::Node {
 public:
     HexaGridUnit(float w, int type_wuxing);
+    HexaGridUnit(float w);
     void notifyChanged();
     void setNodesWuXing(cocos2d::Node** nodesWuXing);
     void setNodeWuXing(cocos2d::Node* nodeWuXing, int type);
@@ -32,7 +33,6 @@ private:
     };
     cocos2d::Node** nodesWuXing = NULL;
     cocos2d::Node* selectedNode = NULL;
-    static const int TYPE_NUM = 8;
     
 };
 
@@ -56,6 +56,7 @@ public:
     static const int EARTH = 5;
     static const int YIN = 6;
     static const int YANG = 7;
+    static const int NUM = 8;
 };
 
 #endif /* defined(__TestGame__HexaGridUnit__) */

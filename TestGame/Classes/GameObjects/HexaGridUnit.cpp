@@ -7,6 +7,7 @@
 //
 
 #include "HexaGridUnit.h"
+#include "DUtils.h"
 #include "cocos2d.h"
 USING_NS_CC;
 
@@ -14,15 +15,28 @@ HexaGridUnit::HexaGridUnit(float w, int type_wuxing) {
     this->setContentSize(Size(w, w));
     this->type_wuxing = type_wuxing;
     this->state = this->UNSELECTED;
-    this->nodesWuXing = new Node*[this->TYPE_NUM];
+    this->nodesWuXing = new Node*[WuXing::NUM];
     
-    for (int i = 0; i < this->TYPE_NUM; i++)
+    for (int i = 0; i < WuXing::NUM; i++)
+        this->nodesWuXing[i] = NULL;
+}
+
+HexaGridUnit::HexaGridUnit(float w) {
+    int type = DUtils::getRandomInt(1, WuXing::NUM-1);
+    if (type == WuXing::EARTH) type++;
+    
+    this->setContentSize(Size(w, w));
+    this->type_wuxing = type;
+    this->state = this->UNSELECTED;
+    this->nodesWuXing = new Node*[WuXing::NUM];
+    
+    for (int i = 0; i < WuXing::NUM; i++)
         this->nodesWuXing[i] = NULL;
 }
 
 void HexaGridUnit::notifyChanged() {
     if (this->nodesWuXing[this->type_wuxing] != NULL && !this->nodesWuXing[this->type_wuxing]->isVisible()) {
-        for (int i = 0; i < this->TYPE_NUM; i++) {
+        for (int i = 0; i < WuXing::NUM; i++) {
             if (this->nodesWuXing[i] != NULL)
                 this->nodesWuXing[i]->setVisible(i == this->type_wuxing);
         }
@@ -34,13 +48,14 @@ void HexaGridUnit::notifyChanged() {
 
 void HexaGridUnit::setNodeWuXing(cocos2d::Node *nodeWuXing, int type) {
     this->nodesWuXing[type] = nodeWuXing;
+    this->nodesWuXing[type]->setVisible(false);
     this->setPosition(0, 0);
     this->addChild(this->nodesWuXing[type], 0);
     this->notifyChanged();
 }
 
 void HexaGridUnit::setNodesWuXing(cocos2d::Node **nodesWuXing) {
-    for (int i = 0; i < this->TYPE_NUM; i++)
+    for (int i = 0; i < WuXing::NUM; i++)
         this->setNodeWuXing(nodesWuXing[i], i);
     this->notifyChanged();
 }

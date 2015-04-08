@@ -73,3 +73,7 @@ int DUtils::calManhattanDistHexaGrid(cocos2d::Vec2 vec) {
     if (vec.x*vec.y > 0) return x_abs+y_abs;
     else return (x_abs > y_abs) ? x_abs:y_abs;
 }
+
+int DUtils::getRandomInt(int min, int max) {
+    return min + (rand() % (int)(max - min + 1));
+}

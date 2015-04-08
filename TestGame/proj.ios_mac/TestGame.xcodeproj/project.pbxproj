@@ -59,8 +59,14 @@
 		521A8EA919F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		521A8EAA19F11F5000D177D7 /* fonts in Resources */ = {isa = PBXBuildFile; fileRef = 521A8EA819F11F5000D177D7 /* fonts */; };
 		52B47A471A53D09C004E4C60 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52B47A461A53D09B004E4C60 /* Security.framework */; };
-		AB6B53191AC512CC002156E6 /* GUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B53171AC512CC002156E6 /* GUtils.cpp */; };
-		AB6B531C1AC520A4002156E6 /* DUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B531A1AC520A4002156E6 /* DUtils.cpp */; };
+		AB0AF7941AD4067C00987E3D /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0AF78E1AD4067C00987E3D /* fire.png */; };
+		AB0AF7951AD4067C00987E3D /* metal.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0AF78F1AD4067C00987E3D /* metal.png */; };
+		AB0AF7961AD4067C00987E3D /* water.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0AF7901AD4067C00987E3D /* water.png */; };
+		AB0AF7971AD4067C00987E3D /* wood.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0AF7911AD4067C00987E3D /* wood.png */; };
+		AB0AF7981AD4067C00987E3D /* yang.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0AF7921AD4067C00987E3D /* yang.png */; };
+		AB0AF7991AD4067C00987E3D /* yin.png in Resources */ = {isa = PBXBuildFile; fileRef = AB0AF7931AD4067C00987E3D /* yin.png */; };
+		AB0EE4B51AD4D5AF00B3F78E /* DUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB0EE4B31AD4D5AF00B3F78E /* DUtils.cpp */; };
+		AB0EE4B81AD4D5BF00B3F78E /* GUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB0EE4B61AD4D5BF00B3F78E /* GUtils.cpp */; };
 		AB6B53201AC523E8002156E6 /* HexaGridMap.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B531E1AC523E8002156E6 /* HexaGridMap.cpp */; };
 		AB6B53261AC52F03002156E6 /* MapActionListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B53241AC52F03002156E6 /* MapActionListener.cpp */; };
 		AB6B53291AC52F1E002156E6 /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B53271AC52F1E002156E6 /* Constants.cpp */; };
@@ -156,10 +162,16 @@
 		521A8E6319F0C34300D177D7 /* Default-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-736h@3x.png"; sourceTree = "<group>"; };
 		521A8EA819F11F5000D177D7 /* fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = fonts; sourceTree = "<group>"; };
 		52B47A461A53D09B004E4C60 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		AB6B53171AC512CC002156E6 /* GUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUtils.cpp; path = Utils/GUtils.cpp; sourceTree = "<group>"; };
-		AB6B53181AC512CC002156E6 /* GUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUtils.h; path = Utils/GUtils.h; sourceTree = "<group>"; };
-		AB6B531A1AC520A4002156E6 /* DUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DUtils.cpp; path = Utils/DUtils.cpp; sourceTree = "<group>"; };
-		AB6B531B1AC520A4002156E6 /* DUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUtils.h; path = Utils/DUtils.h; sourceTree = "<group>"; };
+		AB0AF78E1AD4067C00987E3D /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
+		AB0AF78F1AD4067C00987E3D /* metal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal.png; sourceTree = "<group>"; };
+		AB0AF7901AD4067C00987E3D /* water.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = water.png; sourceTree = "<group>"; };
+		AB0AF7911AD4067C00987E3D /* wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wood.png; sourceTree = "<group>"; };
+		AB0AF7921AD4067C00987E3D /* yang.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yang.png; sourceTree = "<group>"; };
+		AB0AF7931AD4067C00987E3D /* yin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yin.png; sourceTree = "<group>"; };
+		AB0EE4B31AD4D5AF00B3F78E /* DUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DUtils.cpp; path = Utils/DUtils.cpp; sourceTree = "<group>"; };
+		AB0EE4B41AD4D5AF00B3F78E /* DUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DUtils.h; path = Utils/DUtils.h; sourceTree = "<group>"; };
+		AB0EE4B61AD4D5BF00B3F78E /* GUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GUtils.cpp; path = Utils/GUtils.cpp; sourceTree = "<group>"; };
+		AB0EE4B71AD4D5BF00B3F78E /* GUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GUtils.h; path = Utils/GUtils.h; sourceTree = "<group>"; };
 		AB6B531E1AC523E8002156E6 /* HexaGridMap.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HexaGridMap.cpp; path = GameObjects/HexaGridMap.cpp; sourceTree = "<group>"; };
 		AB6B531F1AC523E8002156E6 /* HexaGridMap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HexaGridMap.h; path = GameObjects/HexaGridMap.h; sourceTree = "<group>"; };
 		AB6B53241AC52F03002156E6 /* MapActionListener.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapActionListener.cpp; path = GameObjects/MapActionListener.cpp; sourceTree = "<group>"; };
@@ -290,6 +302,12 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AB0AF78E1AD4067C00987E3D /* fire.png */,
+				AB0AF78F1AD4067C00987E3D /* metal.png */,
+				AB0AF7901AD4067C00987E3D /* water.png */,
+				AB0AF7911AD4067C00987E3D /* wood.png */,
+				AB0AF7921AD4067C00987E3D /* yang.png */,
+				AB0AF7931AD4067C00987E3D /* yin.png */,
 				521A8EA819F11F5000D177D7 /* fonts */,
 				3EACC98E19EE6D4300EB3C5E /* res */,
 				46880B7619C43A67006E1F66 /* CloseNormal.png */,
@@ -364,10 +382,10 @@
 		AB6B53161AC5129D002156E6 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				AB6B53171AC512CC002156E6 /* GUtils.cpp */,
-				AB6B53181AC512CC002156E6 /* GUtils.h */,
-				AB6B531A1AC520A4002156E6 /* DUtils.cpp */,
-				AB6B531B1AC520A4002156E6 /* DUtils.h */,
+				AB0EE4B61AD4D5BF00B3F78E /* GUtils.cpp */,
+				AB0EE4B71AD4D5BF00B3F78E /* GUtils.h */,
+				AB0EE4B31AD4D5AF00B3F78E /* DUtils.cpp */,
+				AB0EE4B41AD4D5AF00B3F78E /* DUtils.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -489,21 +507,27 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				AB0AF7971AD4067C00987E3D /* wood.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
+				AB0AF7951AD4067C00987E3D /* metal.png in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
+				AB0AF7961AD4067C00987E3D /* water.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
 				5087E77D17EB970100C73F5D /* Default-568h@2x.png in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
+				AB0AF7991AD4067C00987E3D /* yin.png in Resources */,
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,
+				AB0AF7981AD4067C00987E3D /* yang.png in Resources */,
 				5087E78217EB970100C73F5D /* Icon-144.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
+				AB0AF7941AD4067C00987E3D /* fire.png in Resources */,
 				50EF629817ECD46A001EB2F8 /* Icon-80.png in Resources */,
 				5087E78417EB970100C73F5D /* Icon-57.png in Resources */,
 				5087E77E17EB970100C73F5D /* Default.png in Resources */,
@@ -533,6 +557,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0EE4B81AD4D5BF00B3F78E /* GUtils.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				46880B8A19C43A87006E1F66 /* HelloWorldScene.cpp in Sources */,
 				AB6B53201AC523E8002156E6 /* HexaGridMap.cpp in Sources */,
@@ -541,9 +566,8 @@
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				AB6B53261AC52F03002156E6 /* MapActionListener.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				AB0EE4B51AD4D5AF00B3F78E /* DUtils.cpp in Sources */,
 				AB6B53291AC52F1E002156E6 /* Constants.cpp in Sources */,
-				AB6B53191AC512CC002156E6 /* GUtils.cpp in Sources */,
-				AB6B531C1AC520A4002156E6 /* DUtils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

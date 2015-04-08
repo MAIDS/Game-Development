@@ -24,6 +24,7 @@ public:
     static Vec2 round(Vec2 vec);
     static int calManhattanDistHexaGrid(Point p1, Point p2);
     static int calManhattanDistHexaGrid(Vec2 vec);
+    static int getRandomInt(int min, int max);    
 };
 
 #endif /* defined(__TestGame__DUtils__) */

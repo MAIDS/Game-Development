@@ -52,7 +52,7 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    auto map = new HexaGridMap(8, this->getContentSize());
+    auto map = new HexaGridMap(17, this->getContentSize());
     map->setRotate(M_PI/180*30);
     this->addChild(map, 0);
     

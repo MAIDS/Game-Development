@@ -54,18 +54,30 @@ HexaGridMap::HexaGridMap(int bound, Size size) {
     this->setPosition(this->mapOrigin);
     for (int i = 0; i < bound; i++) {
         for (int j = 0; j < (int)(1.5*bound); j++) {
-            auto unit = new HexaGridUnit(this->ptsMargin*0.9, WuXing::NONE);
-            auto nodeNone = DrawNode::create();
-            GUtils::drawSolidHexagon(nodeNone,
-                                     Point(unit->getContentSize().width, unit->getContentSize().width)/2,
-                                     unit->getContentSize().width/sqrtf(3), Color4F(1, 0, 0, .6), Color4F());
+            auto unit = new HexaGridUnit(this->ptsMargin*0.9);
             
+            auto nodesWuXing = new Sprite*[WuXing::NUM];
+            for (int i = 0; i < WuXing::NUM; i++) nodesWuXing[i] = NULL;
+            nodesWuXing[WuXing::WATER] = Sprite::create("water.png");
+            nodesWuXing[WuXing::FIRE] = Sprite::create("fire.png");
+            nodesWuXing[WuXing::METAL] = Sprite::create("metal.png");
+            nodesWuXing[WuXing::WOOD] = Sprite::create("wood.png");
+            nodesWuXing[WuXing::YIN] = Sprite::create("yin.png");
+            nodesWuXing[WuXing::YANG] = Sprite::create("yang.png");
+            for (int i = 0; i < WuXing::NUM; i++) {
+                auto nodeWuXing = nodesWuXing[i];
+                if (i != WuXing::NONE && i != WuXing::EARTH) {
+                    nodeWuXing->setScale(unit->getContentSize().width/nodeWuXing->getContentSize().width*1.1);
+                    nodeWuXing->setPosition(Vec2(unit->getContentSize().width, unit->getContentSize().width)/2);
+                    unit->setNodeWuXing(nodeWuXing, i);
+                }
+            }
+
             auto nodeSelected = DrawNode::create();
             GUtils::drawSolidHexagon(nodeSelected,
                                      Point(unit->getContentSize().width, unit->getContentSize().width)/2,
                                      unit->getContentSize().width/sqrtf(3), Color4F(), Color4F(0, 1, 0, .5));
             
-            unit->setNodeWuXing(nodeNone, WuXing::NONE);
             unit->setSelectedMask(nodeSelected);
             unit->setPosition(DUtils::calPositionWithPoint(i, j-i/2, this->ptsMargin, 0)
                               - Vec2(unit->getContentSize().width, unit->getContentSize().width)/2);
@@ -141,10 +153,10 @@ void HexaGridMap::onTouch(cocos2d::Touch *touch, cocos2d::Event *event, int Down
         }
     }
     if (inRegionCnt == 1 && this->getChildByName(DUtils::generateNameByPoint(inRegionPt))) {
-        if (DownOrMove == TOUCH_DOWN) {
+        if (DownOrMove == TOUCH_DOWN && this->trajectory.size() == 0) {
             this->getChildByName<HexaGridUnit*>(DUtils::generateNameByPoint(inRegionPt))->selected();
             this->trajectory.push_back(inRegionPt);
-        } else if (DownOrMove == TOUCH_MOVE && this->trajectory.size() > 0) {
+        } else if ( (DownOrMove == TOUCH_DOWN || DownOrMove == TOUCH_MOVE) && this->trajectory.size() > 0) {
             if (DUtils::calManhattanDistHexaGrid(inRegionPt, this->trajectory.back()) == 1) {
                 if (this->trajectory.size() > 1 && this->trajectory[this->trajectory.size()-2] == inRegionPt) {
                     auto name = DUtils::generateNameByPoint(this->trajectory.back());
@@ -164,8 +176,16 @@ void HexaGridMap::onTouch(cocos2d::Touch *touch, cocos2d::Event *event, int Down
 }
 
 void HexaGridMap::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) {
-    for (auto unitPt : this->trajectory)
-        this->getChildByName<HexaGridUnit*>(DUtils::generateNameByPoint(unitPt))->unselected();
-    this->trajectory.clear();
-    this->updateTrajectory();
+    if (this->trajectory.size() == 1 || !isOnEdges(touch)) {
+        for (auto unitPt : this->trajectory)
+            this->getChildByName<HexaGridUnit*>(DUtils::generateNameByPoint(unitPt))->unselected();
+        this->trajectory.clear();
+        this->updateTrajectory();
+    } else if (this->trajectory.size() > 1 && isOnEdges(touch)) {
+        
+    }
+}
+
+bool HexaGridMap::isOnEdges(cocos2d::Touch *touch) {
+    return false;
 }
