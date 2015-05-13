@@ -52,8 +52,8 @@ bool HelloWorld::init()
     menu->setPosition(Vec2::ZERO);
     this->addChild(menu, 1);
 
-    auto map = new HexaGridMap(17, this->getContentSize());
-    map->setRotate(M_PI/180*30);
+    auto map = new HexaGridMap(17, this->getContentSize(), "test_bg.jpg");
+//    map->setRotate(M_PI/180*30);
     this->addChild(map, 0);
     
 //    auto map2 = new HexaGridMap(6, this->getContentSize());

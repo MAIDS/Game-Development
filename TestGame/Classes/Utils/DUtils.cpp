@@ -13,13 +13,13 @@
 USING_NS_CC;
 
 Point DUtils::calPositionWithPoint(float x, float y, float ptsMargin, float phi) {
-    return DUtils::rotate(Point(x+0.5*y, sqrtf(0.75)*y), phi)*ptsMargin;
+    return DUtils::rotate(Point(x+0.5*y, sqrtf(0.75)*y), phi + M_PI/6)*ptsMargin;
 }
 
 Point DUtils::calPointWithPosition(float x_pos, float y_pos, Point origin, float ptsMargin, float phi) {
     float x = x_pos - origin.x;
     float y = y_pos - origin.y;
-    auto pts = DUtils::rotate(Vec2(x, y), -phi);
+    auto pts = DUtils::rotate(Vec2(x, y), -(phi + M_PI/6));
     x = pts.x;
     y = pts.y;
     return Point(x-y/sqrtf(3), 2*y/sqrtf(3))/ptsMargin;

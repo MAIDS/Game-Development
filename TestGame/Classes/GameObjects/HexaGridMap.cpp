@@ -43,7 +43,7 @@ HexaGridMap::HexaGridMap(Point* bounds, int count, Size size) {
 }
 */
 
-HexaGridMap::HexaGridMap(int bound, Size size) {
+HexaGridMap::HexaGridMap(int bound, Size size, std::string mapBgPath) {
     this->boundsType = this->CONSTANT;
     this->mBoundCount = 1;
     this->mBound = new int[1];
@@ -56,22 +56,22 @@ HexaGridMap::HexaGridMap(int bound, Size size) {
         for (int j = 0; j < (int)(1.5*bound); j++) {
             auto unit = new HexaGridUnit(this->ptsMargin*0.9);
             
-            auto nodesWuXing = new Sprite*[WuXing::NUM];
-            for (int i = 0; i < WuXing::NUM; i++) nodesWuXing[i] = NULL;
-            nodesWuXing[WuXing::WATER] = Sprite::create("water.png");
-            nodesWuXing[WuXing::FIRE] = Sprite::create("fire.png");
-            nodesWuXing[WuXing::METAL] = Sprite::create("metal.png");
-            nodesWuXing[WuXing::WOOD] = Sprite::create("wood.png");
-            nodesWuXing[WuXing::YIN] = Sprite::create("yin.png");
-            nodesWuXing[WuXing::YANG] = Sprite::create("yang.png");
-            for (int i = 0; i < WuXing::NUM; i++) {
-                auto nodeWuXing = nodesWuXing[i];
-                if (i != WuXing::NONE && i != WuXing::EARTH) {
-                    nodeWuXing->setScale(unit->getContentSize().width/nodeWuXing->getContentSize().width*1.1);
-                    nodeWuXing->setPosition(Vec2(unit->getContentSize().width, unit->getContentSize().width)/2);
-                    unit->setNodeWuXing(nodeWuXing, i);
-                }
-            }
+//            auto nodesWuXing = new Sprite*[WuXing::NUM];
+//            for (int i = 0; i < WuXing::NUM; i++) nodesWuXing[i] = NULL;
+//            nodesWuXing[WuXing::WATER] = Sprite::create("water.png");
+//            nodesWuXing[WuXing::FIRE] = Sprite::create("fire.png");
+//            nodesWuXing[WuXing::METAL] = Sprite::create("metal.png");
+//            nodesWuXing[WuXing::WOOD] = Sprite::create("wood.png");
+//            nodesWuXing[WuXing::YIN] = Sprite::create("yin.png");
+//            nodesWuXing[WuXing::YANG] = Sprite::create("yang.png");
+//            for (int i = 0; i < WuXing::NUM; i++) {
+//                auto nodeWuXing = nodesWuXing[i];
+//                if (i != WuXing::NONE && i != WuXing::EARTH) {
+//                    nodeWuXing->setScale(unit->getContentSize().width/nodeWuXing->getContentSize().width*1.1);
+//                    nodeWuXing->setPosition(Vec2(unit->getContentSize().width, unit->getContentSize().width)/2);
+//                    unit->setNodeWuXing(nodeWuXing, i);
+//                }
+//            }
 
             auto nodeSelected = DrawNode::create();
             GUtils::drawSolidHexagon(nodeSelected,
@@ -85,6 +85,11 @@ HexaGridMap::HexaGridMap(int bound, Size size) {
             this->addChild(unit, 1, DUtils::generateNameByPoint(Point(i, j-i/2)));
         }
     }
+    
+    auto bgNode = Sprite::create(mapBgPath);
+    bgNode->setContentSize(size);
+    this->addChild(bgNode, 0);
+    
     this->trajectoryCanvas = DrawNode::create();
     this->addChild(this->trajectoryCanvas, 2);
     this->setupListener();
@@ -118,7 +123,7 @@ void HexaGridMap::updateTrajectory() {
         ptsToDraw[i] = Point(box.getMinX()+box.getMaxX(), box.getMinY()+box.getMaxY())/2;
     }
     for (int i = 1; i < this->trajectory.size(); i++) {
-        ((DrawNode*)this->trajectoryCanvas)->drawSegment(ptsToDraw[i-1], ptsToDraw[i], 2, Color4F::WHITE);
+        ((DrawNode*)this->trajectoryCanvas)->drawSegment(ptsToDraw[i-1], ptsToDraw[i], 4, Color4F(.5, .25, .25, 1));
     }
 }
 

@@ -17,8 +17,6 @@ public:
     HexaGridUnit(float w, int type_wuxing);
     HexaGridUnit(float w);
     void notifyChanged();
-    void setNodesWuXing(cocos2d::Node** nodesWuXing);
-    void setNodeWuXing(cocos2d::Node* nodeWuXing, int type);
     void setSelectedMask(cocos2d::Node* selectedMask);
     void selected();
     void unselected();
@@ -31,23 +29,13 @@ private:
         UNSELECTED,
         SELECTED
     };
-    cocos2d::Node** nodesWuXing = NULL;
+    cocos2d::Node* nodeWuXing = NULL;
     cocos2d::Node* selectedNode = NULL;
     
 };
 
 class WuXing {
 public:
-    /*
-    static const int WU_XING_NONE = 0;
-    static const int WU_XING_METAL = 1;
-    static const int WU_XING_WOOD = 2;
-    static const int WU_XING_WATER = 3;
-    static const int WU_XING_FIRE = 4;
-    static const int WU_XING_EARTH = 5;
-    static const int WU_XING_YIN = 6;
-    static const int WU_XING_YANG = 7;
-    */
     static const int NONE = 0;
     static const int METAL = 1;
     static const int WOOD = 2;
@@ -57,6 +45,28 @@ public:
     static const int YIN = 6;
     static const int YANG = 7;
     static const int NUM = 8;
+    
+    static std::string PATH(int type) {
+        switch (type) {
+            case NONE:
+                return "";
+            case METAL:
+                return "metal.png";
+            case WOOD:
+                return "wood.png";
+            case WATER:
+                return "water.png";
+            case FIRE:
+                return "fire.png";
+            case YIN:
+                return "yin.png";
+            case YANG:
+                return "yang.png";
+                
+            default:
+                return "";
+        }
+    }
 };
 
 #endif /* defined(__TestGame__HexaGridUnit__) */

@@ -17,7 +17,7 @@ class MapActionListener {
 public:
     virtual void onActionStart() {};
     virtual void onTrajectoryUpdate() {};
-    virtual void onActionEnd(int action_code, Point* pts) {};
+    virtual void onActionEnd(int action_code, std::vector<Point> pts) {};
 };
 
 class Action {

@@ -11,53 +11,39 @@
 #include "cocos2d.h"
 USING_NS_CC;
 
+#define WUXING_SIZE_SCALE 1.2
+
 HexaGridUnit::HexaGridUnit(float w, int type_wuxing) {
     this->setContentSize(Size(w, w));
     this->type_wuxing = type_wuxing;
+    this->nodeWuXing = Sprite::create(WuXing::PATH(this->type_wuxing));
+    this->nodeWuXing->setScale(this->getContentSize().width/this->nodeWuXing->getContentSize().width*WUXING_SIZE_SCALE);
+    this->nodeWuXing->setPosition(Vec2(.5, .5)*this->getContentSize().width);
+    this->addChild(this->nodeWuXing, 0);
     this->state = this->UNSELECTED;
-    this->nodesWuXing = new Node*[WuXing::NUM];
-    
-    for (int i = 0; i < WuXing::NUM; i++)
-        this->nodesWuXing[i] = NULL;
+    this->notifyChanged();
 }
 
 HexaGridUnit::HexaGridUnit(float w) {
-    int type = DUtils::getRandomInt(1, WuXing::NUM-1);
-    if (type == WuXing::EARTH) type++;
-    
+    int type = DUtils::getRandomInt(1, WuXing::NUM-2);
+    if (type >= WuXing::EARTH) type++;
     this->setContentSize(Size(w, w));
     this->type_wuxing = type;
+    this->nodeWuXing = Sprite::create(WuXing::PATH(this->type_wuxing));
+    this->nodeWuXing->setScale(this->getContentSize().width/this->nodeWuXing->getContentSize().width*WUXING_SIZE_SCALE);
+    this->nodeWuXing->setPosition(Vec2(.5, .5)*this->getContentSize().width);
+    this->addChild(this->nodeWuXing, 0);
     this->state = this->UNSELECTED;
-    this->nodesWuXing = new Node*[WuXing::NUM];
-    
-    for (int i = 0; i < WuXing::NUM; i++)
-        this->nodesWuXing[i] = NULL;
+    this->notifyChanged();
 }
 
 void HexaGridUnit::notifyChanged() {
-    if (this->nodesWuXing[this->type_wuxing] != NULL && !this->nodesWuXing[this->type_wuxing]->isVisible()) {
-        for (int i = 0; i < WuXing::NUM; i++) {
-            if (this->nodesWuXing[i] != NULL)
-                this->nodesWuXing[i]->setVisible(i == this->type_wuxing);
-        }
-    }
+//    this->nodeWuXing = Sprite::create(WuXing::PATH(this->type_wuxing));
+//    this->nodeWuXing->setScale(this->getContentSize().width/this->nodeWuXing->getContentSize().width*1.1);
+//    this->nodeWuXing->setPosition(Vec2(.5, .5)*this->getContentSize().width);
     if (this->selectedNode != NULL) {
         this->selectedNode->setVisible(this->state == this->SELECTED);
     }
-}
-
-void HexaGridUnit::setNodeWuXing(cocos2d::Node *nodeWuXing, int type) {
-    this->nodesWuXing[type] = nodeWuXing;
-    this->nodesWuXing[type]->setVisible(false);
-    this->setPosition(0, 0);
-    this->addChild(this->nodesWuXing[type], 0);
-    this->notifyChanged();
-}
-
-void HexaGridUnit::setNodesWuXing(cocos2d::Node **nodesWuXing) {
-    for (int i = 0; i < WuXing::NUM; i++)
-        this->setNodeWuXing(nodesWuXing[i], i);
-    this->notifyChanged();
 }
 
 void HexaGridUnit::setSelectedMask(cocos2d::Node *selectedMask) {

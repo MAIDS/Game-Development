@@ -71,6 +71,7 @@
 		AB6B53261AC52F03002156E6 /* MapActionListener.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B53241AC52F03002156E6 /* MapActionListener.cpp */; };
 		AB6B53291AC52F1E002156E6 /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B53271AC52F1E002156E6 /* Constants.cpp */; };
 		ABA47A2F1AC67ECA00EAD117 /* HexaGridUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABA47A2D1AC67ECA00EAD117 /* HexaGridUnit.cpp */; };
+		ABCDD5721B02F717002EA933 /* test_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABCDD5711B02F717002EA933 /* test_bg.jpg */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -180,6 +181,7 @@
 		AB6B53281AC52F1E002156E6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = GameObjects/Constants.h; sourceTree = "<group>"; };
 		ABA47A2D1AC67ECA00EAD117 /* HexaGridUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HexaGridUnit.cpp; path = GameObjects/HexaGridUnit.cpp; sourceTree = "<group>"; };
 		ABA47A2E1AC67ECA00EAD117 /* HexaGridUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HexaGridUnit.h; path = GameObjects/HexaGridUnit.h; sourceTree = "<group>"; };
+		ABCDD5711B02F717002EA933 /* test_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_bg.jpg; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -302,6 +304,7 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ABCDD5711B02F717002EA933 /* test_bg.jpg */,
 				AB0AF78E1AD4067C00987E3D /* fire.png */,
 				AB0AF78F1AD4067C00987E3D /* metal.png */,
 				AB0AF7901AD4067C00987E3D /* water.png */,
@@ -507,6 +510,7 @@
 			files = (
 				5087E78117EB970100C73F5D /* Icon-120.png in Resources */,
 				5087E78617EB970100C73F5D /* Icon-76.png in Resources */,
+				ABCDD5721B02F717002EA933 /* test_bg.jpg in Resources */,
 				AB0AF7971AD4067C00987E3D /* wood.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				AB0AF7951AD4067C00987E3D /* metal.png in Resources */,

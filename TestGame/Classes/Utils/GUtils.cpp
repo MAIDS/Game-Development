@@ -22,5 +22,5 @@ void GUtils::drawSolidHexagon(cocos2d::DrawNode* node, Point center,
 
 void GUtils::drawSolidHexagon(cocos2d::DrawNode* node, Point center,
                               float r, cocos2d::Color4F colorFilled, cocos2d::Color4F lineColor) {
-    drawSolidHexagon(node, center, r, M_PI/6, colorFilled, lineColor);
+    drawSolidHexagon(node, center, r, 0, colorFilled, lineColor);
 }

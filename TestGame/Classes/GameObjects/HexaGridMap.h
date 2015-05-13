@@ -20,7 +20,7 @@ public:
     HexaGridMap(int* bounds, int count, cocos2d::Size size);
     HexaGridMap(Point* bounds, int count, cocos2d::Size size);
     */
-    HexaGridMap(int bound, cocos2d::Size size);
+    HexaGridMap(int bound, cocos2d::Size size, std::string mapBgPath);
     void setMapActionListener(MapActionListener* lisener);
     void setRotate(float rad);
     MapActionListener* getMapActionListenter();
