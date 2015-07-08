@@ -10,6 +10,8 @@
 #include "cocos2d.h"
 #include <math.h>
 #include <iostream>
+#include <stdarg.h>
+#include <sstream>
 USING_NS_CC;
 
 Point DUtils::calPositionWithPoint(float x, float y, float ptsMargin, float phi) {
@@ -77,3 +79,14 @@ int DUtils::calManhattanDistHexaGrid(cocos2d::Vec2 vec) {
 int DUtils::getRandomInt(int min, int max) {
     return min + (rand() % (int)(max - min + 1));
 }
+
+std::string DUtils::appendString(int n_args, ...) {
+    va_list ap;
+    std::string str = "";
+    va_start(ap, n_args);
+    for (int i = 0; i < n_args; i++) {
+        str.append(va_arg(ap, char*));
+    }
+    return str;
+}
+

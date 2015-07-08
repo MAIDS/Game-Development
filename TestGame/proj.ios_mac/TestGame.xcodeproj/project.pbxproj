@@ -72,6 +72,8 @@
 		AB6B53291AC52F1E002156E6 /* Constants.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AB6B53271AC52F1E002156E6 /* Constants.cpp */; };
 		ABA47A2F1AC67ECA00EAD117 /* HexaGridUnit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABA47A2D1AC67ECA00EAD117 /* HexaGridUnit.cpp */; };
 		ABCDD5721B02F717002EA933 /* test_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABCDD5711B02F717002EA933 /* test_bg.jpg */; };
+		ABE5E2291B4C5B9F00CA3E87 /* MAIDSLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABE5E2271B4C5B9F00CA3E87 /* MAIDSLog.cpp */; };
+		ABE5E22C1B4C672500CA3E87 /* WuXing.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABE5E22A1B4C672500CA3E87 /* WuXing.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -182,6 +184,10 @@
 		ABA47A2D1AC67ECA00EAD117 /* HexaGridUnit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HexaGridUnit.cpp; path = GameObjects/HexaGridUnit.cpp; sourceTree = "<group>"; };
 		ABA47A2E1AC67ECA00EAD117 /* HexaGridUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HexaGridUnit.h; path = GameObjects/HexaGridUnit.h; sourceTree = "<group>"; };
 		ABCDD5711B02F717002EA933 /* test_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_bg.jpg; sourceTree = "<group>"; };
+		ABE5E2271B4C5B9F00CA3E87 /* MAIDSLog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MAIDSLog.cpp; path = Utils/MAIDSLog.cpp; sourceTree = "<group>"; };
+		ABE5E2281B4C5B9F00CA3E87 /* MAIDSLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MAIDSLog.h; path = Utils/MAIDSLog.h; sourceTree = "<group>"; };
+		ABE5E22A1B4C672500CA3E87 /* WuXing.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WuXing.cpp; path = GameObjects/WuXing.cpp; sourceTree = "<group>"; };
+		ABE5E22B1B4C672500CA3E87 /* WuXing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = WuXing.h; path = GameObjects/WuXing.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -389,6 +395,8 @@
 				AB0EE4B71AD4D5BF00B3F78E /* GUtils.h */,
 				AB0EE4B31AD4D5AF00B3F78E /* DUtils.cpp */,
 				AB0EE4B41AD4D5AF00B3F78E /* DUtils.h */,
+				ABE5E2271B4C5B9F00CA3E87 /* MAIDSLog.cpp */,
+				ABE5E2281B4C5B9F00CA3E87 /* MAIDSLog.h */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -404,6 +412,8 @@
 				AB6B53281AC52F1E002156E6 /* Constants.h */,
 				ABA47A2D1AC67ECA00EAD117 /* HexaGridUnit.cpp */,
 				ABA47A2E1AC67ECA00EAD117 /* HexaGridUnit.h */,
+				ABE5E22A1B4C672500CA3E87 /* WuXing.cpp */,
+				ABE5E22B1B4C672500CA3E87 /* WuXing.h */,
 			);
 			name = GameObjects;
 			sourceTree = "<group>";
@@ -567,9 +577,11 @@
 				AB6B53201AC523E8002156E6 /* HexaGridMap.cpp in Sources */,
 				ABA47A2F1AC67ECA00EAD117 /* HexaGridUnit.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
+				ABE5E22C1B4C672500CA3E87 /* WuXing.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				AB6B53261AC52F03002156E6 /* MapActionListener.cpp in Sources */,
 				503AE10117EB989F00D1A890 /* main.m in Sources */,
+				ABE5E2291B4C5B9F00CA3E87 /* MAIDSLog.cpp in Sources */,
 				AB0EE4B51AD4D5AF00B3F78E /* DUtils.cpp in Sources */,
 				AB6B53291AC52F1E002156E6 /* Constants.cpp in Sources */,
 			);

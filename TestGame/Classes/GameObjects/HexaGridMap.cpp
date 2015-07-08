@@ -12,6 +12,7 @@
 #include "GUtils.h"
 #include "MapActionListener.h"
 #include "HexaGridUnit.h"
+#include "WuXing.h"
 #include <math.h>
 #include <iostream>
 USING_NS_CC;
@@ -182,8 +183,10 @@ void HexaGridMap::onTouch(cocos2d::Touch *touch, cocos2d::Event *event, int Down
 
 void HexaGridMap::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) {
     if (this->trajectory.size() == 1 || !isOnEdges(touch)) {
-        for (auto unitPt : this->trajectory)
+        for (auto unitPt : this->trajectory) {
             this->getChildByName<HexaGridUnit*>(DUtils::generateNameByPoint(unitPt))->unselected();
+            this->getChildByName<HexaGridUnit*>(DUtils::generateNameByPoint(unitPt))->changeWuXing(WuXing::WATER);
+        }
         this->trajectory.clear();
         this->updateTrajectory();
     } else if (this->trajectory.size() > 1 && isOnEdges(touch)) {
