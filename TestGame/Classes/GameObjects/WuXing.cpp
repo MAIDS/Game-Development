@@ -9,15 +9,15 @@
 #include "WuXing.h"
 #include "MAIDSLog.h"
 
-bool WuXing::isInitialized = false;
-cocos2d::Texture2D* WuXing::METAL_TEXTURE = nullptr;
-cocos2d::Texture2D* WuXing::WOOD_TEXTURE = nullptr;
-cocos2d::Texture2D* WuXing::WATER_TEXTURE = nullptr;
-cocos2d::Texture2D* WuXing::FIRE_TEXTURE = nullptr;
-cocos2d::Texture2D* WuXing::YIN_TEXTURE = nullptr;
-cocos2d::Texture2D* WuXing::YANG_TEXTURE = nullptr;
+bool Attribute::isInitialized = false;
+cocos2d::Texture2D* Attribute::METAL_TEXTURE = nullptr;
+cocos2d::Texture2D* Attribute::WOOD_TEXTURE = nullptr;
+cocos2d::Texture2D* Attribute::WATER_TEXTURE = nullptr;
+cocos2d::Texture2D* Attribute::FIRE_TEXTURE = nullptr;
+cocos2d::Texture2D* Attribute::YIN_TEXTURE = nullptr;
+cocos2d::Texture2D* Attribute::YANG_TEXTURE = nullptr;
 
-std::string WuXing::PATH(int type) {
+std::string Attribute::PATH(int type) {
     switch (type) {
         case NONE:
             return "";
@@ -39,7 +39,7 @@ std::string WuXing::PATH(int type) {
     }
 }
 
-cocos2d::Texture2D* WuXing::Texture(int type) {
+cocos2d::Texture2D* Attribute::Texture(int type) {
     if (!isInitialized) { init(); isInitialized = true; }
     switch (type) {
         case NONE:
@@ -62,7 +62,7 @@ cocos2d::Texture2D* WuXing::Texture(int type) {
     }
 }
 
-void WuXing::init() {
+void Attribute::init() {
     MAIDSLog::i("WuXing", "initTexture");
     METAL_TEXTURE = cocos2d::Sprite::create(PATH(METAL))->getTexture();
     WOOD_TEXTURE = cocos2d::Sprite::create(PATH(WOOD))->getTexture();

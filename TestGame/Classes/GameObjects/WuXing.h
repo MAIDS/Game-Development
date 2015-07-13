@@ -12,7 +12,7 @@
 #include <stdio.h>
 #include "cocos2d.h"
 
-class WuXing {
+class Attribute {
 public:
     static const int NONE = 0;
     static const int METAL = 1;

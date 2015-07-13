@@ -24,7 +24,7 @@ HexaGridUnit::HexaGridUnit(float w, int type_wuxing) {
 }
 
 HexaGridUnit::HexaGridUnit(float w) {
-    int type = DUtils::getRandomInt(1, WuXing::NUM-1);
+    int type = DUtils::getRandomInt(1, Attribute::NUM-1);
     this->setContentSize(Size(w, w));
     this->initNodeWuXing(type);
     this->state = this->UNSELECTED;
@@ -34,14 +34,15 @@ HexaGridUnit::HexaGridUnit(float w) {
 void HexaGridUnit::initNodeWuXing(int type_wuxing) {
     this->type_wuxing = type_wuxing;
     
-    this->nodeWuXing = Sprite::createWithTexture(WuXing::Texture(type_wuxing));
+    this->nodeWuXing = Sprite::createWithTexture(Attribute::Texture(type_wuxing));
 //    MAIDSLog::d(TAG, DUtils::appendString(2, "create ", WuXing::PATH(type_wuxing).c_str()));
     this->nodeWuXing->setScale(this->getContentSize().width/this->nodeWuXing->getContentSize().width*WUXING_SIZE_SCALE);
+//    cout << this->getContentSize().width << endl;
     this->nodeWuXing->setPosition(Vec2(.5, .5)*this->getContentSize().width);
     this->addChild(this->nodeWuXing, 0);
 }
 
-void HexaGridUnit::changeWuXing() { this->changeWuXing(DUtils::getRandomInt(1, WuXing::NUM-1)); }
+void HexaGridUnit::changeWuXing() { this->changeWuXing(DUtils::getRandomInt(1, Attribute::NUM-1)); }
 
 void HexaGridUnit::changeWuXing(int type_wuxing) {
     this->nodeWuXing->removeFromParent();

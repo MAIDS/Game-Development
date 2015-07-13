@@ -45,12 +45,14 @@ HexaGridMap::HexaGridMap(Point* bounds, int count, Size size) {
 */
 
 HexaGridMap::HexaGridMap(int bound, Size size, std::string mapBgPath) {
+    std::cout << DUtils::generateNameByPoint(size) << endl;
     this->boundsType = this->CONSTANT;
     this->mBoundCount = 1;
     this->mBound = new int[1];
     this->mBound[0] = bound;
     this->setContentSize(size);
     this->ptsMargin = size.width/8;
+    std::cout << "this->ptsMargin = " << this->ptsMargin << endl;
     this->mapOrigin = Point(this->ptsMargin, this->ptsMargin);
     this->setPosition(this->mapOrigin);
     for (int i = 0; i < bound; i++) {
@@ -185,7 +187,7 @@ void HexaGridMap::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) {
     if (this->trajectory.size() == 1 || !isOnEdges(touch)) {
         for (auto unitPt : this->trajectory) {
             this->getChildByName<HexaGridUnit*>(DUtils::generateNameByPoint(unitPt))->unselected();
-            this->getChildByName<HexaGridUnit*>(DUtils::generateNameByPoint(unitPt))->changeWuXing(WuXing::WATER);
+            this->getChildByName<HexaGridUnit*>(DUtils::generateNameByPoint(unitPt))->changeWuXing(Attribute::WATER);
         }
         this->trajectory.clear();
         this->updateTrajectory();
