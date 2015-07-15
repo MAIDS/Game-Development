@@ -14,7 +14,11 @@ LOCAL_SRC_FILES := hellocpp/main.cpp \
                    ../../../Classes/AppDelegate.cpp \
                    ../../../Classes/HelloWorldScene.cpp
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../../../Classes \
+					$(LOCAL_PATH)/../../../Classes/Unit \
+					$(LOCAL_PATH)/../../../Classes/Interface \
+					$(LOCAL_PATH)/../../../Classes/Callback \
+					$(LOCAL_PATH)/../../../Classes/Utils
 
 # _COCOS_HEADER_ANDROID_BEGIN
 # _COCOS_HEADER_ANDROID_END
