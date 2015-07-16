@@ -23,6 +23,7 @@ public:
     void setRotate(float rad);
     void setMapListener(HexaGridMapListener* l);
     HexaGridMapListener* getListener();
+    HexaGridMapUnit* getUnitWithPos(Vec2 p);
     
 private:
     void setupListener();

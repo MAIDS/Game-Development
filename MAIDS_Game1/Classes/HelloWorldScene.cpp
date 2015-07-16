@@ -76,7 +76,6 @@ void HelloWorld::menuCloseCallback(Ref* pSender)
 
 void TestMapListener::onTrajectoryEnded(int action_code, std::vector<Point> traj) {
     for (int i = 0; i < traj.size(); i++) {
-        ((HexaGridMapUnit*)this->mMap->getChildByName<HexaGridMapUnit*>(Utils::generateNameByPoint(traj[i])))
-                                ->changeAttr();
+        ( (HexaGridMapUnit*)this->mMap->getUnitWithPos(traj[i]) )->changeAttr();
     }
 }

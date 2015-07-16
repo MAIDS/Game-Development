@@ -51,6 +51,10 @@ HexaGridMap::HexaGridMap(int bound, cocos2d::Size size, std::string mapBgPath) {
 }
 
 void HexaGridMap::setMapListener(HexaGridMapListener *l) { this->mListener = l; }
+HexaGridMapListener* HexaGridMap::getListener() { return this->mListener; }
+HexaGridMapUnit* HexaGridMap::getUnitWithPos(cocos2d::Vec2 p) {
+    return this->getChildByName<HexaGridMapUnit*>(Utils::generateNameByPoint(p));
+}
 
 void HexaGridMap::setRotate(float rad) {
     auto selfSize = this->getContentSize();
@@ -100,7 +104,7 @@ void HexaGridMap::onTouch(cocos2d::Touch *touch, cocos2d::Event *event, int Down
     for (int i = 0; i < 4; i++) {
         Point testPt((int)pts.x + (i%2) - (pts.x < 0), (int)pts.y + ((i/2)%2) - (pts.y < 0));
         if (this->getChildByName(Utils::generateNameByPoint(testPt))) {
-            auto testUnit = this->getChildByName<HexaGridMapUnit*>(Utils::generateNameByPoint(testPt));
+            auto testUnit = this->getUnitWithPos(testPt);
             auto touchVec = Utils::rotate(touch->getLocation()-this->mapOrigin, -this->rotateRad);
             if (testUnit->getBoundingBox().containsPoint(touchVec)) {
                 inRegionCnt++;
@@ -112,7 +116,7 @@ void HexaGridMap::onTouch(cocos2d::Touch *touch, cocos2d::Event *event, int Down
     }
     if (inRegionCnt == 1 && this->getChildByName(Utils::generateNameByPoint(inRegionPt))) {
         if (DownOrMove == TOUCH_DOWN && this->trajectory.size() == 0) {
-            this->getChildByName<HexaGridMapUnit*>(Utils::generateNameByPoint(inRegionPt))->selected();
+            this->getUnitWithPos(inRegionPt)->selected();
             this->trajectory.push_back(inRegionPt);
         } else if ( (DownOrMove == TOUCH_DOWN || DownOrMove == TOUCH_MOVE) && this->trajectory.size() > 0) {
             if (isTrajPointLegal(inRegionPt)) {
@@ -136,7 +140,7 @@ void HexaGridMap::onTouch(cocos2d::Touch *touch, cocos2d::Event *event, int Down
 void HexaGridMap::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) {
     if (this->trajectory.size() == 1 || !isOnEdges(touch)) {
         for (auto unitPt : this->trajectory) {
-            this->getChildByName<HexaGridMapUnit*>(Utils::generateNameByPoint(unitPt))->unselected();
+            this->getUnitWithPos(unitPt)->unselected();
             if (this->mListener != nullptr)
                 this->mListener->onTrajectoryEnded(GameAction::MOVE, this->trajectory);
         }
