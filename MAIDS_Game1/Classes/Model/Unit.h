@@ -14,7 +14,7 @@
 #include "Attribute.h"
 USING_NS_CC;
 
-class Unit {
+class Unit : public Ref {
 public:
     Unit(int attr_code);
     Unit();

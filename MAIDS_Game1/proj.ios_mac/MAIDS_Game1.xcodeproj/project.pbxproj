@@ -68,6 +68,8 @@
 		ABBCF8DF1B54A17100F2614D /* MAIDSLog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABBCF8DB1B54A17100F2614D /* MAIDSLog.cpp */; };
 		ABBCF8E01B54A17100F2614D /* Utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABBCF8DD1B54A17100F2614D /* Utils.cpp */; };
 		ABBCF8E31B54A1AF00F2614D /* Unit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ABBCF8E11B54A1AF00F2614D /* Unit.cpp */; };
+		ABBCF8E71B58E53200F2614D /* character122.json in Resources */ = {isa = PBXBuildFile; fileRef = ABBCF8E51B58E53200F2614D /* character122.json */; };
+		ABBCF8E81B58E53200F2614D /* mock_character.json in Resources */ = {isa = PBXBuildFile; fileRef = ABBCF8E61B58E53200F2614D /* mock_character.json */; };
 		ABC7B4211B5334590080B675 /* fire.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC7B41A1B5334590080B675 /* fire.png */; };
 		ABC7B4221B5334590080B675 /* metal.png in Resources */ = {isa = PBXBuildFile; fileRef = ABC7B41B1B5334590080B675 /* metal.png */; };
 		ABC7B4231B5334590080B675 /* test_bg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = ABC7B41C1B5334590080B675 /* test_bg.jpg */; };
@@ -185,6 +187,8 @@
 		ABBCF8DE1B54A17100F2614D /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Utils.h; path = Utils/Utils.h; sourceTree = "<group>"; };
 		ABBCF8E11B54A1AF00F2614D /* Unit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Unit.cpp; path = Model/Unit.cpp; sourceTree = "<group>"; };
 		ABBCF8E21B54A1AF00F2614D /* Unit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Unit.h; path = Model/Unit.h; sourceTree = "<group>"; };
+		ABBCF8E51B58E53200F2614D /* character122.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = character122.json; sourceTree = "<group>"; };
+		ABBCF8E61B58E53200F2614D /* mock_character.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock_character.json; sourceTree = "<group>"; };
 		ABC7B41A1B5334590080B675 /* fire.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fire.png; sourceTree = "<group>"; };
 		ABC7B41B1B5334590080B675 /* metal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metal.png; sourceTree = "<group>"; };
 		ABC7B41C1B5334590080B675 /* test_bg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test_bg.jpg; sourceTree = "<group>"; };
@@ -316,6 +320,8 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				ABBCF8E51B58E53200F2614D /* character122.json */,
+				ABBCF8E61B58E53200F2614D /* mock_character.json */,
 				ABC7B41A1B5334590080B675 /* fire.png */,
 				ABC7B41B1B5334590080B675 /* metal.png */,
 				ABC7B41C1B5334590080B675 /* test_bg.jpg */,
@@ -542,6 +548,7 @@
 				ABC7B4241B5334590080B675 /* water.png in Resources */,
 				5087E77F17EB970100C73F5D /* Default@2x.png in Resources */,
 				ABC7B4221B5334590080B675 /* metal.png in Resources */,
+				ABBCF8E71B58E53200F2614D /* character122.json in Resources */,
 				50EF629917ECD46A001EB2F8 /* Icon-100.png in Resources */,
 				5087E78317EB970100C73F5D /* Icon-152.png in Resources */,
 				ABC7B4231B5334590080B675 /* test_bg.jpg in Resources */,
@@ -553,6 +560,7 @@
 				521A8E6519F0C34300D177D7 /* Default-736h@3x.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
+				ABBCF8E81B58E53200F2614D /* mock_character.json in Resources */,
 				ABC7B4261B5334590080B675 /* yang.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,

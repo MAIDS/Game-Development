@@ -1,0 +1,15 @@
+{
+	'name': 'Carbon',
+	'rare': 5,
+	'occupation': 20,
+	'tribe': 0,
+	'series': '',
+	'max_exp': 2500000,
+	'exp_curve': 1,
+	'max_lv': 100,
+	'max_slv': 10,
+	'atk_curve': 1,
+	'hp_curve': 1,
+	'rcv_curve': 1,
+	'spd_curve': 1
+}

@@ -48,8 +48,9 @@ void HexaGridMapUnit::changeAttr(int attr_code) {
     MAIDSLog::d(TAG,
                 Utils::appendString(3, "HexaGridMapUnit::changeAttr(", Attribute::PATH(attr_code).c_str(), ")"));
     Unit::changeAttr(attr_code);
-    this->attrNode->removeFromParent();
-    this->initAttrNode(this->mAttribute);
+//    this->attrNode->removeFromParent();
+//    this->initAttrNode(this->mAttribute);
+    ((Sprite*)this->attrNode)->setTexture(Attribute::Texture(attr_code));
 }
 
 void HexaGridMapUnit::changeAttr() {
