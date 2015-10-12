@@ -84,21 +84,25 @@ void HexaGridMap::updateTrajectory() {
     }
 }
 
+//手指放上螢幕
 bool HexaGridMap::onTouchBegan(cocos2d::Touch *touch, cocos2d::Event *event) {
     this->onTouch(touch, event, TOUCH_DOWN);
     return true;
 }
 
+//移動手指
 void HexaGridMap::onTouchMoved(cocos2d::Touch *touch, cocos2d::Event *event) {
     this->onTouch(touch, event, TOUCH_MOVE);
 }
 
 void HexaGridMap::onTouch(cocos2d::Touch *touch, cocos2d::Event *event, int DownOrMove) {
+    //把螢幕的觸控點轉成六角座標
     auto pts = Utils::calPointWithPosition(touch->getLocation().x,
                                            touch->getLocation().y,
                                            this->mapOrigin,
                                            this->ptsMargin,
                                            this->rotateRad);
+    //校正用,為了解ＢＵＧ
     int inRegionCnt = 0;
     Point inRegionPt;
     for (int i = 0; i < 4; i++) {
@@ -114,18 +118,22 @@ void HexaGridMap::onTouch(cocos2d::Touch *touch, cocos2d::Event *event, int Down
                 break;
         }
     }
+    
+    //找到方塊了,抓到trajactory上面
     if (inRegionCnt == 1 && this->getChildByName(Utils::generateNameByPoint(inRegionPt))) {
         if (DownOrMove == TOUCH_DOWN && this->trajectory.size() == 0) {
             this->getUnitWithPos(inRegionPt)->selected();
             this->trajectory.push_back(inRegionPt);
         } else if ( (DownOrMove == TOUCH_DOWN || DownOrMove == TOUCH_MOVE) && this->trajectory.size() > 0) {
             if (isTrajPointLegal(inRegionPt)) {
+                //偵測有沒有畫回來
                 if (this->trajectory.size() > 1 && this->trajectory[this->trajectory.size()-2] == inRegionPt) {
                     auto name = Utils::generateNameByPoint(this->trajectory.back());
                     this->getChildByName<HexaGridMapUnit*>(name)->unselected();
                     this->trajectory.pop_back();
                 } else {
                     auto name = Utils::generateNameByPoint(inRegionPt);
+                    //can replaced by getUnitWithPos()
                     if (!this->getChildByName<HexaGridMapUnit*>(name)->isSelected()) {
                         this->getChildByName<HexaGridMapUnit*>(name)->selected();
                         this->trajectory.push_back(inRegionPt);
@@ -137,6 +145,7 @@ void HexaGridMap::onTouch(cocos2d::Touch *touch, cocos2d::Event *event, int Down
     }
 }
 
+//放開手指
 void HexaGridMap::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) {
     if (this->trajectory.size() == 1 || !isOnEdges(touch)) {
         for (auto unitPt : this->trajectory) {
@@ -151,6 +160,7 @@ void HexaGridMap::onTouchEnded(cocos2d::Touch *touch, cocos2d::Event *event) {
     }
 }
 
+//邊界移動，待寫
 bool HexaGridMap::isOnEdges(cocos2d::Touch *touch) {
     return false;
 }
